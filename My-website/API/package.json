@@ -1,0 +1,9 @@
+{
+  "name": "resume-api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "func start"
+  },
+  "main": "certifications/index.js"
+}
