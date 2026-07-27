@@ -141,58 +141,6 @@
     </div>
   </section>
 
-  <!-- Architecture & CI/CD Pipeline Section -->
-<section id="architecture" class="architecture-section">
-  <div class="architecture-card">
-    <div class="card-header">
-      <h3>☁️ Site Architecture & CI/CD Pipeline</h3>
-      <span class="badge">Azure & GitHub Actions</span>
-    </div>
-    
-    <p class="card-description">
-      Automated static site deployment utilizing modern DevOps practices and cloud-native infrastructure.
-    </p>
-
-    <!-- Visual Architecture Flow -->
-    <div class="architecture-flow">
-      <div class="flow-step">
-        <span class="step-icon">💻</span>
-        <span class="step-title">VS Code</span>
-        <span class="step-desc">Feature Commit</span>
-      </div>
-      <div class="flow-arrow">➔</div>
-      <div class="flow-step">
-        <span class="step-icon">⚙️</span>
-        <span class="step-title">GitHub Actions</span>
-        <span class="step-desc">Automated CI/CD</span>
-      </div>
-      <div class="flow-arrow">➔</div>
-      <div class="flow-step">
-        <span class="step-icon">🌐</span>
-        <span class="step-title">Azure Static Web App</span>
-        <span class="step-desc">Global Edge CDN</span>
-      </div>
-    </div>
-
-    <!-- Tech Highlights -->
-    <ul class="tech-list">
-      <li><strong>Source Control:</strong> Private GitHub repository managed with feature-branch protection workflows.</li>
-      <li><strong>CI/CD Engine:</strong> GitHub Actions utilizing the official <code>Azure/static-web-apps-deploy</code> runner.</li>
-      <li><strong>Security & Secrets:</strong> Zero hardcoded credentials; authorization handled via encrypted repository tokens (<code>AZURE_STATIC_WEB_APPS_API_TOKEN</code>).</li>
-      <li><strong>Hosting & Delivery:</strong> Azure Static Web Apps featuring global CDN distribution and automated SSL termination.</li>
-    </ul>
-
-    <!-- Link to GitHub Profile -->
-    <div class="card-footer">
-      <a href="https://github.com/Sahil-000" target="_blank" rel="noopener noreferrer" class="github-btn">
-        <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor">
-          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-        </svg>
-        View GitHub Profile
-      </a>
-    </div>
-  </div>
-</section>
 
   <!-- CERTIFICATIONS -->
   <section id="certifications">
@@ -223,6 +171,111 @@
       <span class="chip">HTML / CSS / JS</span>
     </div>
     <p class="cert-hint" style="margin-bottom:0;">Source repo is private for now — happy to walk through the architecture or share specific parts on request.</p>
+  
+  <!-- Site Architecture Flow Section -->
+<section id="architecture" class="architecture-section">
+  <div class="architecture-container">
+    <div class="architecture-header">
+      <h2 class="header-main-title">How This Site Was Built & Deployed</h2>
+      <div class="header-tags">
+        <span class="site-badge">Azure Static Web Apps</span>
+        <span class="site-badge">Azure Service Principal</span>
+        <span class="site-badge">GitHub Actions & Secrets</span>
+      </div>
+    </div>
+    
+    <p class="architecture-lead">
+      An end-to-end operational flow showing how local web development, Azure cloud provisioning, IAM authentication, and automated CI/CD pipelines connect to host this live portfolio.
+    </p>
+
+    <!-- Visual Step-by-Step Flowchart -->
+    <div class="architecture-flowchart">
+      
+      <!-- Step 1 -->
+      <div class="flow-card">
+        <div class="flow-step-number">STEP 01</div>
+        <div class="flow-card-content">
+          <span class="flow-card-icon">💻</span>
+          <h3 class="flow-card-title">1. Local Web Creation</h3>
+          <p class="flow-card-text">Developed HTML, CSS, and interactive frontend assets locally.</p>
+        </div>
+      </div>
+
+      <div class="flow-arrow-connector">➔</div>
+
+      <!-- Step 2 -->
+      <div class="flow-card">
+        <div class="flow-step-number">STEP 02</div>
+        <div class="flow-card-content">
+          <span class="flow-card-icon">☁️</span>
+          <h3 class="flow-card-title">2. Azure SWA Provisioning</h3>
+          <p class="flow-card-text">Created the Azure Static Web App resource inside the Azure Portal / CLI.</p>
+        </div>
+      </div>
+
+      <div class="flow-arrow-connector">➔</div>
+
+      <!-- Step 3 -->
+      <div class="flow-card">
+        <div class="flow-step-number">STEP 03</div>
+        <div class="flow-card-content">
+          <span class="flow-card-icon">🔑</span>
+          <h3 class="flow-card-title">3. Azure Service Principal</h3>
+          <p class="flow-card-text">Generated an Azure Service Principal (RBAC) to authenticate deployment access.</p>
+        </div>
+      </div>
+
+      <div class="flow-arrow-connector">➔</div>
+
+      <!-- Step 4 -->
+      <div class="flow-card">
+        <div class="flow-step-number">STEP 04</div>
+        <div class="flow-card-content">
+          <span class="flow-card-icon">🔒</span>
+          <h3 class="flow-card-title">4. GitHub Secrets Setup</h3>
+          <p class="flow-card-text">Linked Azure deployment token safely inside GitHub Encrypted Repository Secrets.</p>
+        </div>
+      </div>
+
+      <div class="flow-arrow-connector">➔</div>
+
+      <!-- Step 5 -->
+      <div class="flow-card">
+        <div class="flow-step-number">STEP 05</div>
+        <div class="flow-card-content">
+          <span class="flow-card-icon">⚡</span>
+          <h3 class="flow-card-title">5. CI/CD Pipeline Execution</h3>
+          <p class="flow-card-text">Pushed code to <code>main</code> branch, triggering GitHub Actions workflow run.</p>
+        </div>
+      </div>
+
+      <div class="flow-arrow-connector">➔</div>
+
+      <!-- Step 6 -->
+      <div class="flow-card">
+        <div class="flow-step-number">STEP 06</div>
+        <div class="flow-card-content">
+          <span class="flow-card-icon">🌐</span>
+          <h3 class="flow-card-title">6. Global Edge Hosting</h3>
+          <p class="flow-card-text">Live deployment delivered globally via Azure Static Web Apps Edge CDN.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- GitHub Profile Action Button -->
+    <div class="card-action-footer">
+      <a href="https://github.com/Sahil-000" target="_blank" rel="noopener noreferrer" class="github-profile-btn">
+        <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+        View GitHub Profile
+      </a>
+    </div>
+
+  </div>
+</section>
+
   </section>
 
   <!-- EDUCATION -->
@@ -241,19 +294,6 @@
     </div>
   </section>
 
-  <!-- VIDEO -->
-  <section id="video">
-    <div class="section-head">
-      <span class="section-num">06</span>
-      <h2 class="section-title">Walkthrough Video</h2>
-    </div>
-    <div class="video-placeholder">
-      <div class="play">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-      </div>
-      <p>VIDEO_PLACEHOLDER.mp4<br>Drop in an intro clip or project walkthrough — swap this block for an &lt;video&gt; tag or embedded player.</p>
-    </div>
-  </section>
 
 </main>
 
