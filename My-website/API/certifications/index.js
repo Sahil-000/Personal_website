@@ -32,16 +32,6 @@ module.exports = async function (context, req) {
       verifyUrl: "https://learn.microsoft.com/api/credentials/share/en-gb/SahilMangal-1677/B8F54DE91DC75702?sharingId=3E47EC6402C07A5C",
       description: "Covers Microsoft 365 cloud concepts, core services, security, compliance, and licensing across the M365 productivity suite."
     },
-    {
-      code: "NERDIO",
-      name: "Nerdio Azure Fundamentals",
-      issuer: "Nerdio",
-      category: "Other",
-      level: "Fundamentals",
-      badgeUrl: null,
-      verifyUrl: null,
-      description: "Foundational training on Nerdio's management layer for Azure Virtual Desktop — provisioning, cost automation, and end-user compute management."
-    }
   ];
 
   context.res = {
