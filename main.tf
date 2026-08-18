@@ -59,6 +59,46 @@ resource "azurerm_static_web_app" "personalwebsite" {
   sku_tier            = "Free"
 }
 
+############################################
+# COSMOS DB ACCOUNT
+############################################
+
+# Cosmos DB Account (Free Tier Enabled)
+resource "azurerm_cosmosdb_account" "db" {
+  name                = "sahil-resume-cosmosdb"
+  location            = azurerm_resource_group.rg.location # update if your RG local variable name differs
+  resource_group_name = azurerm_resource_group.rg.name
+  offer_type          = "Standard"
+  kind                = "GlobalDocumentDB"
+
+  free_tier_enabled = true # Keeps the first 1,000 RU/s and 25GB storage completely free
+
+  consistency_policy {
+    consistency_level = "Eventual"
+  }
+
+  geo_location {
+    location          = azurerm_resource_group.rg.location
+    failover_priority = 0
+  }
+}
+
+# Cosmos DB SQL Database
+resource "azurerm_cosmosdb_sql_database" "database" {
+  name                = "AzureResume"
+  resource_group_name = azurerm_resource_group.rg.name
+  account_name        = azurerm_cosmosdb_account.db.name
+}
+
+# Cosmos DB Container
+resource "azurerm_cosmosdb_sql_container" "container" {
+  name                = "Counter"
+  resource_group_name = azurerm_resource_group.rg.name
+  account_name        = azurerm_cosmosdb_account.db.name
+  database_name       = azurerm_cosmosdb_sql_database.database.name
+  partition_key_paths = ["/id"]
+  throughput          = 400
+}
 
 ############################################
 # OUTPUTS
