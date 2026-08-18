@@ -29,6 +29,7 @@ The architecture leverages serverless components and static web hosting to provi
 *   **Visitor Counter:** [Mention if you included a dynamic counter (e.g., using Azure Functions + Cosmos DB)].
 *   **Responsive Design:** Optimized for mobile and desktop viewing.
 
+
 ## 📂 Project Structure
 ```text
 .
@@ -36,6 +37,7 @@ The architecture leverages serverless components and static web hosting to provi
 ├── .github/        # GitHub Actions workflows for CI/CD
 ├── assets/         # Images, fonts, and icons
 └── README.md
+```
 
 ## 🌐 Live Demo
 
