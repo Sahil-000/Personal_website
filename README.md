@@ -36,3 +36,7 @@ The architecture leverages serverless components and static web hosting to provi
 ├── .github/        # GitHub Actions workflows for CI/CD
 ├── assets/         # Images, fonts, and icons
 └── README.md
+
+## 🌐 Live Demo
+
+Check out the live site here: www.sahilmangal.com
