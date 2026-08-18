@@ -18,7 +18,7 @@ module.exports = async function (context, req) {
       category: "Microsoft",
       level: "Associate",
       badgeUrl: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg",
-      verifyUrl: "https://learn.microsoft.com/en-us/users/sahilmangal-1677/credentials/certification/azure-network-engineer-associate?tab=credentials-tab",
+      verifyUrl: "https://learn.microsoft.com/api/credentials/share/en-gb/SahilMangal-1677/36159BFCBBBE2E2A?sharingId=3E47EC6402C07A5C",
       description: "Validates skills in designing, implementing, and maintaining Azure networking — hybrid connectivity, load balancing, network security, and private access."
     },
 
